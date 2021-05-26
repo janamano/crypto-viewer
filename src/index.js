@@ -1,13 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import CustomProvider from './store/CustomProvider'
+import Dashboard from './pages/Dashboard'
+import About from './pages/About'
 
-ReactDOM.render(
-  <React.StrictMode>
+
+const app = (
+  <CustomProvider>
     <App />
-  </React.StrictMode>,
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Dashboard} />
+        <Route path="/about" component={About} />
+      </Switch>
+    </Router>
+  </CustomProvider>
+) 
+
+
+ReactDOM.render(app,
   document.getElementById('root')
 );
 

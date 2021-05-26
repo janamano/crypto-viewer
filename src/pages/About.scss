@@ -1,0 +1,24 @@
+.jumbo {
+    margin: 5rem 8rem;
+    display: flex;
+}
+
+.img {
+    margin-right: 3rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .img {
+      animation: App-logo-spin infinite 5s linear;
+    }
+}
+
+@keyframes App-logo-spin {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(360deg);
+    }
+}
+  
